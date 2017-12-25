@@ -13,5 +13,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         TextView tvshow = (TextView) findViewById(R.id.tv);
         tvshow.setText("" + JniUtil.hello());
+        System.out.print("我是小白，第一次提交代码啊");
     }
 }
