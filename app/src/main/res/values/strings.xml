@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">TestC</string>
+    <string name="bt_login">登入</string>
+    <string name="bt_mvp">MVP模式</string>
 </resources>
