@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.renosdata.testc.OnEffectiveClickListener;
 import com.renosdata.testc.R;
 import com.renosdata.testc.mvp.IMainContract;
 import com.renosdata.testc.mvp.bean.LoginBean;
@@ -45,14 +46,15 @@ public class MainFragment extends Fragment implements IMainContract.IMainView {
         mEtPassword = (EditText) view.findViewById(R.id.etPassword);
         mTvInputName.setHint("用户名");
         mTvInputPassword.setHint("密码");
-        view.findViewById(R.id.btLogin).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                login();
-            }
-        });
-
+        view.findViewById(R.id.btLogin).setOnClickListener(mOnEffectiveClickListener);
     }
+
+    private OnEffectiveClickListener mOnEffectiveClickListener=new OnEffectiveClickListener() {
+        @Override
+        public void onEffectiveClick(View v) {
+            login();
+        }
+    };
 
     private void login() {
         mProgressDialog = new ProgressDialog(getContext());

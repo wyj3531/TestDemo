@@ -29,11 +29,11 @@ public class Main2Activity extends AppCompatActivity {
      * Activity 在项目中是一个全局的控制者，负责创建 view 以及 presenter 实例，并将二者联系起来，
      */
     private void initView() {
-        FragmentManager FMs = getFragmentManager();
-        FragmentTransaction MfragmentTransactions = FMs.beginTransaction();
+        FragmentManager fragmentManager = getFragmentManager();
+        FragmentTransaction fragmentTransactions = fragmentManager.beginTransaction();
         MainFragment mainFragment =new MainFragment();
-        MfragmentTransactions.add(R.id.contentFrame,mainFragment);
-        MfragmentTransactions.commit();
+        fragmentTransactions.add(R.id.contentFrame,mainFragment);
+        fragmentTransactions.commit();
         new MainPresenter(mainFragment);
     }
 
